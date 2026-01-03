@@ -7,8 +7,8 @@ Lua 5.5.0 を x68k向けにポーティングしてみました。X-BASICの一�
 * "lua.x" と "luac.x"を環境変数PATHに含まれるディレクトリにコピーして lua.x を起動してください
 
 ### lua-cjsonモジュールを使ってみたい人
-* 本環境のluaの実行ファイルは lua_cjsonを組み込み済みですのでいきなり cjson.decode()やcjson.encode()が使えます
-* cjson.utilを使うためには以下の手順を実施しておく必要があります
+* cjson.decode/cjson.encodeは標準で組み込まれているためrequire("cjson")しなくても使えます
+* cjson.utilを使いたい場合は以下の手順を実施しておいて require("cjson.util") して使用します 
     * luamodフォルダの中身を環境変数 LUA_PATH に含まれるディレクトリにコピーする
     * ( LUA_PATHの設定例 : LUA_PATH=;;A:\\luamod\\?.lua;A:\\luamod\\?.luac )
 * lua_cjsonのAPI関数については [このあたり](https://github.com/kazuwai1/lua_cjson_x68k/blob/main/README_orig.md)や[このあたり](https://github.com/kazuwai1/lua_cjson_x68k/blob/main/manual.adoc)を参照してください

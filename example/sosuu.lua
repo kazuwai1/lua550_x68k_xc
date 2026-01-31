@@ -2,9 +2,9 @@
 function sosuu(s)
   local i
   local j 
-  local p = {}
-
+--  local p = {}
   local m=s*s
+  local p = table.create(m)
 
   st=os.time()
   print("init table")
@@ -16,7 +16,7 @@ function sosuu(s)
   for i=2, s do
     if p[i] == 1 then
       print(i)
-      for j=i , m/i do
+      for j=i , m//i do
         p[i*j] = 0
       end
     end

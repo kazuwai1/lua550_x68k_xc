@@ -15,19 +15,28 @@
   150 for i=0 to 159
   160     d(i) = 100
   170 next
-  180 print time$
+  180 print "START",time$
   190 while y<180
   200     while x<180
-  210        if (x=0) and (y=0) then r=0 else r = dr*sqr(x*x+y*y)
-  220        z = 100*cos(r)-30*cos(3*r)
-  230        sx = int(80+x/3-y/6)
-  240        sy = int(40-y/6-z/4)
-  250        if (0<=sx) and (sx<160) then if(d(sx)>sy) then zz = int((z+100#)*0.035#)+1: pset(sx*3, sy*4, c(zz)): d(sx)=sy
-  260        x=x+4
-  270     endwhile
-  280     x=-180
-  290     y=y+6
-  300 endwhile
-  310 print time$
-  320 end
+  210         if (x=0) and (y=0) then {
+  220             r=0
+  230         } else {
+  240             r = dr*sqr(x*x+y*y)
+  250         }
+  260         z = 100#*cos(r)-30#*cos(3*r)
+  270         sx = 80+x/3-y/6
+  280         sy = 40-y/6-z/4
+  290         if (0<=sx) and (sx<160) then {
+  300             if(d(sx)>sy) then {
+  310                 pset(sx*3, sy*4, c(int((z+100#)*0.035#)+1))
+  320                 d(sx)=sy
+  330             }
+  340         }
+  350         x=x+4
+  360     endwhile
+  370     x=-180
+  380     y=y+6
+  390 endwhile
+  400 print "END",time$
+  410 end
 

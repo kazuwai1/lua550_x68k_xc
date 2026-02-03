@@ -17,32 +17,42 @@
   170     d(i) = 100
   180 next
   190 i=1
-  200 while y<180
-  210     while x<180
-  220         if (x=0) and (y=0) then r=0 else r = dr*sqr(x*x+y*y)
-  230         zzz(i) = 100*cos(r)-30*cos(3*r)
-  240         i=i+1
-  250         x=x+4
-  260     endwhile
-  270     x=-180
-  280     y=y+6
-  290 endwhile
-  300 x = -180
-  310 y = -180
-  320 i = 1
-  330 print time$
-  340 while y<180
-  350     while x<180
-  360         z = zzz(i)
-  370         sx = 80+x/3-y/6
-  380         sy = 40-y/6-z/4
-  390         if (0<=sx) and (sx<160) then if(d(sx)>sy) then pset(sx*3, sy*4, c(int((z+100#)*0.035#)+1)): d(sx)=sy
-  400         i=i+1
-  410         x=x+4
-  420     endwhile
-  430     x=-180
-  440     y=y+6
-  450 endwhile
-  460 print time$
-  470 end
+  200 print "START", time$
+  210 while y<180
+  220     while x<180
+  230         if (x=0) and (y=0) then  {
+  240             r=0
+  250         } else {
+  260            r = dr*sqr(x*x+y*y)
+  270         }
+  280         zzz(i) = 100#*cos(r)-30#*cos(3*r)
+  290         i=i+1
+  300         x=x+4
+  310     endwhile
+  320     x=-180
+  330     y=y+6
+  340 endwhile
+  350 x = -180
+  360 y = -180
+  370 i = 1
+  380 print "PART1 END", time$
+  390 while y<180
+  400     while x<180
+  410         z = zzz(i)
+  420         sx = 80+x/3-y/6
+  430         sy = 40-y/6-z/4
+  440         if (0<=sx) and (sx<160) then {
+  450             if(d(sx)>sy) then {
+  460                 pset(sx*3, sy*4, c(int((z+100#)*0.035#)+1))
+  470                 d(sx)=sy
+  480             }
+  490         }
+  500         i=i+1
+  510         x=x+4
+  520     endwhile
+  530     x=-180
+  540     y=y+6
+  550 endwhile
+  560 print "END", time$
+  570 end
 

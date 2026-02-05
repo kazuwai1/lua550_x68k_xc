@@ -1,7 +1,7 @@
    10 screen 1,1,1,1
    20 apage(0)
    30 vpage(15)
-   40 dim int d(160)
+   40 dim int d(161)
    50 dim int c(8) = { 0, 3, 5, 7, 9, 11, 13, 15 }
    60 float dr = 3.141592#/180#
    70 float r
@@ -12,7 +12,7 @@
   120 int sy
   130 int zz
   140 int i
-  150 for i=0 to 159
+  150 for i=1 to 160
   160     d(i) = 100
   170 next
   180 print "START",time$
@@ -24,9 +24,9 @@
   240             r = dr*sqr(x*x+y*y)
   250         }
   260         z = 100#*cos(r)-30#*cos(3*r)
-  270         sx = 80+x/3-y/6
+  270         sx = 81+x/3-y/6
   280         sy = 40-y/6-z/4
-  290         if (0<=sx) and (sx<160) then {
+  290         if (1<=sx) and (sx<161) then {
   300             if(d(sx)>sy) then {
   310                 pset(sx*3, sy*4, c(int((z+100#)*0.035#)+1))
   320                 d(sx)=sy

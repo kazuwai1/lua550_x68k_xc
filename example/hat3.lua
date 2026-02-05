@@ -23,10 +23,10 @@ function draw_surface()
     for y=-180, 180, 6 do
         for x=-180, 180, 4 do
             local z = zzz[i]
-            local sx = 80 + x // 3 - y // 6
+            local sx = 81 + x // 3 - y // 6
             local sy = 40 - y // 6 - z // 4
 
-            if sx >= 0 and sx < 160 then
+            if sx >= 1 and sx < 161 then
                 if d[sx] > sy then
                     px[i2] = sx*3
                     py[i2] = sy*4
@@ -41,7 +41,7 @@ function draw_surface()
     return i2-1
 end
 
-for i = 0, 159 do
+for i = 1, 160 do
     d[i] = 100
 end
 
@@ -51,7 +51,7 @@ print("START")
 for y=-180, 180, 6 do
     for x = -180, 180, 4 do
         if x == 0 and y == 0 then
-            r = 0
+            r = 0.0
         else
             r = dr * math.sqrt(x*x+y*y)
         end

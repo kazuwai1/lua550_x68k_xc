@@ -1,7 +1,7 @@
    10 screen 1,1,1,1
    20 apage(0)
    30 vpage(15)
-   40 dim int d(160)
+   40 dim int d(161)
    50 dim int c(8) = { 0, 3, 5, 7, 9, 11, 13, 15 }
    60 float dr = 3.141592#/180#
    70 float r
@@ -13,7 +13,7 @@
   130 int sy
   140 int zz
   150 int i
-  160 for i=0 to 159
+  160 for i=1 to 160
   170     d(i) = 100
   180 next
   190 i=1
@@ -21,7 +21,7 @@
   210 while y<180
   220     while x<180
   230         if (x=0) and (y=0) then  {
-  240             r=0
+  240             r=0.0
   250         } else {
   260            r = dr*sqr(x*x+y*y)
   270         }
@@ -39,9 +39,9 @@
   390 while y<180
   400     while x<180
   410         z = zzz(i)
-  420         sx = 80+x/3-y/6
+  420         sx = 81+x/3-y/6
   430         sy = 40-y/6-z/4
-  440         if (0<=sx) and (sx<160) then {
+  440         if (1<=sx) and (sx<161) then {
   450             if(d(sx)>sy) then {
   460                 pset(sx*3, sy*4, c(int((z+100#)*0.035#)+1))
   470                 d(sx)=sy

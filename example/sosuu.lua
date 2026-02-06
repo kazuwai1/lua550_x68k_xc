@@ -28,6 +28,7 @@ function sosuu(s)
   local cnt=0
   for j=2, m do
     if p[j] == 1 then
+--      print(j)
       cnt = cnt + 1
     end
   end

@@ -20,8 +20,9 @@
   200 print
   210 print time$
   220 for i=2 to m
-  230     if p(i) = 1 then cnt=cnt+1
-  240 next
-  250 print cnt
-  260 /*
+  230 /*     print i
+  240     if p(i) = 1 then cnt=cnt+1
+  250 next
+  260 print cnt
+  270 /*
 
